@@ -8,23 +8,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:todo_flutter/main.dart';
+import 'package:todo_flutter/main.dart'; // Imports TodoApp
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  // NOTE: This test is designed for a default counter app. Since we created
+  // a To-Do app, the following test is no longer relevant, but we fix the
+  // class name here to ensure the project compiles.
+
+  testWidgets('Renders TodoApp smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const TodoApp()); // Changed from MyApp() to TodoApp()
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Since our app doesn't have a simple counter, we verify the main title.
+    expect(find.text('My To-Do List'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
+    // Tap the FAB icon and trigger a frame.
     await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    await tester.pumpAndSettle(); // Wait for navigation animation to complete
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that the New Task screen is displayed
+    expect(find.text('New Task'), findsOneWidget);
   });
 }
