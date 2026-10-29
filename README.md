@@ -1,4 +1,4 @@
-# To-Do Mobile App (Flutter/Dart Version)
+# To-Do Mobile App (Flutter/Dart Version) [CLASS PROJECT]
 
 This project is the **Flutter/Dart implementation** of the To-Do mobile app designed in earlier labs.  
 It recreates the core functionality of the previous versions while introducing Flutter’s UI components and state management.
@@ -59,7 +59,7 @@ You can add unique styling such as:
 - **Background images**
 - Any other creative UI enhancements
 
-> The styling must differ from default Flutter styling and from the examples shown in class or on Canvas.
+
 
 ---
 
